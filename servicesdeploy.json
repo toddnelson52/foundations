@@ -160,7 +160,10 @@
              "networkSecurityGroup": {
                "id": "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG1'))]"
              }
-           }
+           },
+           "dependsOn": [
+             "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG1'))]"
+           ]
          },
          {
            "name": "[parameters('GatewaysubnetName')]",
