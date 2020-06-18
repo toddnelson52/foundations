@@ -67,7 +67,7 @@
    },
    "BastionsubnetPrefix": {
      "type": "string",
-     "defaultValue": "10.0.1.160/27",
+     "defaultValue": "10.0.0.160/27",
      "metadata": {
        "description": "Bastion Subnet Prefix"
      }
@@ -161,9 +161,7 @@
                "id": "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG1'))]"
              }
            },
-           "dependsOn": [
-             "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG1'))]"
-           ]
+           "dependsOn": "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG1'))]"
          },
          {
            "name": "[parameters('GatewaysubnetName')]",
