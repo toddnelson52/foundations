@@ -141,6 +141,11 @@
      "type": "Microsoft.Network/virtualNetworks",
      "name": "[parameters('vnetName')]",
      "location": "[parameters('location')]",
+     "dependsOn": [
+         "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG1'))]",
+         "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG2'))]",
+         "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG3'))]"
+         ],
      "properties": {
        "addressSpace": {
          "addressPrefixes": [
@@ -155,26 +160,21 @@
              "networkSecurityGroup": {
                "id": "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG1'))]"
              }
-           },
-           "dependsOn": [
-             "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG1'))]"
-           ]
+           }
          },
          {
            "name": "[parameters('subnet2Name')]",
            "properties": {
              "addressPrefix": "[parameters('subnet2Prefix')]",
              "id": "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG2'))]"
-           },
-           "dependsOn": "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG2'))]"
+           }
          },
          {
            "name": "[parameters('subnet3Name')]",
            "properties": {
              "addressPrefix": "[parameters('subnet3Prefix')]",
              "id": "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG3'))]"
-           },
-           "dependsOn": "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG3'))]"
+           }
          },
          {
            "name": "[parameters('BastionsubnetName')]",

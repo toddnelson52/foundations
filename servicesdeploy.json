@@ -146,6 +146,9 @@
      "type": "Microsoft.Network/virtualNetworks",
      "name": "[parameters('vnetName')]",
      "location": "[parameters('location')]",
+     "dependsOn": [
+       "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG1'))]"
+     ],
      "properties": {
        "addressSpace": {
          "addressPrefixes": [
@@ -160,8 +163,7 @@
              "networkSecurityGroup": {
                "id": "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG1'))]"
              }
-           },
-           "dependsOn": "[resourceId('Microsoft.Network/networkSecurityGroups',parameters('NSG1'))]"
+           }
          },
          {
            "name": "[parameters('GatewaysubnetName')]",
