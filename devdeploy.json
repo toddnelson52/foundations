@@ -2,20 +2,6 @@
  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
  "contentVersion": "1.0.0.0",
  "parameters": {
-   "rgName": {
-     "type": "string",
-     "defaultValue": "rg_vnet_preprod_eastus",
-     "metadata": {
-       "description": "Resource Group Name"
-     }
-   },
-   "rgLocation": {
-     "type": "string",
-     "defaultValue": "EastUS",
-     "metadata": {
-       "description": "Resource Group Location"
-     }
-   },
    "vnetName": {
      "type": "string",
      "defaultValue": "vnet_preprod_eastus",
@@ -117,12 +103,6 @@
  },
  "variables": {},
  "resources": [
-   {
-     "type": "Microsoft.Resources/resourceGroups",
-     "name": "[parameters('rgName')]",
-     "location": "[parameters('rgLocation')]",
-     "apiVersion": "2018-10-01"
-   },
    {
      "name": "[parameters('NSG1')]",
      "type": "Microsoft.Network/networkSecurityGroups",
