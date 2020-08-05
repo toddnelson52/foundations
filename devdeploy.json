@@ -95,7 +95,7 @@
    },
    "RecoveryServicesVaultName": {
      "type": "string",
-     "defaultValue": "dev-eastus",
+     "defaultValue": "preprod-eastus",
      "metadata": {
        "description": "Recovery services vault for PreProd subscription"
      }
