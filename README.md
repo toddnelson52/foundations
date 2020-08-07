@@ -1,4 +1,5 @@
 # foundations
+These are JSON templates for a new azure foundations deployment.  The deployments include the basic infrastructure for each subscription.  They include objects like VNETs, NSGs, Virtual Network Gateways, Recovey Services Vaults, and a single Log Analytics account.
 
 Services Deployment
 
