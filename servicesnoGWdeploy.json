@@ -65,6 +65,14 @@
        "description": "Bastion Subnet  Name"
      }
    },
+   "loganalyticsname": {
+     "type": "string",
+     "defaultValue": "Services-Eastus"
+    },
+    "loganalyticssku": {
+     "type": "string",
+     "defaultValue": "pergb2018"
+    },
    "RecoveryServicesVaultName": {
      "type": "string",
      "defaultValue": "services-eastus",
@@ -132,6 +140,17 @@
        ]
      }
    },
+   {
+    "apiVersion": "2017-03-15-preview",
+    "name": "[parameters('loganalyticsname')]",
+    "location": "[parameters('location')]",
+    "type": "Microsoft.OperationalInsights/workspaces",
+      "properties": {
+        "sku": {
+           "name": "[parameters('loganalyticssku')]"
+          }
+        }
+    },
    {
      "name": "[parameters('RecoveryServicesVaultName')]",
      "type": "Microsoft.RecoveryServices/vaults",
