@@ -143,6 +143,7 @@
        "vpnType": "RouteBased",
        "enableBgp": false,
        "sku": {
+         "name": "[parameters('GatewaySKU')]",
          "tier": "[parameters('GatewaySKU')]"
        }
      },
