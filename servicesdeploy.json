@@ -30,6 +30,13 @@
        "description": "Public IP for Azure Gateway"
      }
    },
+   "GatewaySKU": {
+     "type": "string",
+     "defaultValue": "Basic",
+     "metadata": {
+       "description": "VPN Gateway SKU"
+     }
+   },
    "NSG1": {
      "defaultValue": "NSG_services_eastus",
      "type": "string",
@@ -136,8 +143,7 @@
        "vpnType": "RouteBased",
        "enableBgp": false,
        "sku": {
-         "name": "VpnGw1",
-         "tier": "VpnGw1"
+         "tier": "[parameters('GatewaySKU')]"
        }
      },
      "dependsOn": [
