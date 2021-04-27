@@ -32,7 +32,7 @@
    },
    "GatewaySKU": {
      "type": "string",
-     "defaultValue": "Basic",
+     "defaultValue": "VpnGw1",
      "metadata": {
        "description": "VPN Gateway SKU"
      }
