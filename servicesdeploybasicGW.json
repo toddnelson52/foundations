@@ -37,13 +37,6 @@
        "description": "VPN Gateway SKU"
      }
    },
-   "GatewaySKUName": {
-     "type": "string",
-     "defaultValue": "Basic",
-     "metadata": {
-       "description": "VPN Gateway SKU Name"
-     }
-   },
    "NSG1": {
      "defaultValue": "NSG_services_eastus",
      "type": "string",
@@ -150,7 +143,6 @@
        "vpnType": "RouteBased",
        "enableBgp": false,
        "sku": {
-         "name": "[parameters('GatewaySKUName')]",
          "tier": "[parameters('GatewaySKU')]"
        }
      },
